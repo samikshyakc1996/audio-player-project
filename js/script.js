@@ -2,6 +2,10 @@ const playOrPause = document.querySelector(`#playOrPause`);
 const playprev = document.querySelector(`#playprev`);
 const playnext = document.querySelector(`#playnext`);
 const playlistEle = document.querySelector(`#playlists`);
+const trackDuration = document.querySelector(`#trackDuration`);
+const trackTime = document.querySelector(`#trackTime`);
+const trackProgress = document.querySelector(`#trackProgress`);
+const trackVolume = document.querySelector(`#trackVolume`);
 
 const playlist = [
   `./audio/10 Adele - Lovesong.mp3`,
@@ -27,6 +31,11 @@ const loadSongFromPlaylistByIndex = function (index = 0, start = false) {
   //SETUP THE FIRST SONG TO PLAY
   song.src = playlist[playlistIndex];
 };
+const setVolumeTo = function (vol) {
+  song.volume = vol;
+};
+
+//LOAD UP THE PLAYLIST
 playlist.forEach(function (item, index) {
   playlistEle.innerHTML += `<li data-index="${index}">${item.slice(
     item.indexOf("audio/") + 6
@@ -34,6 +43,7 @@ playlist.forEach(function (item, index) {
   // SHORTENED THE NAME OF TRACK
 });
 
+//WHEN THE APP GETS LOAD
 window.addEventListener(`load`, function () {
   // IF PLAY/PAUSE IS CLICKED
   playOrPause.addEventListener(`click`, function (event) {
@@ -75,4 +85,7 @@ window.addEventListener(`load`, function () {
       playOrPause.textContent = `⏸`;
     }
   });
+});
+trackVolume.addEventListener(`input`, function (event) {
+  setVolumeTo(trackVolume.value);
 });
