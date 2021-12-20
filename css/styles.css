@@ -1,0 +1,101 @@
+.container {
+  background-color: rgb(223, 241, 235);
+}
+
+body {
+  margin: 10em auto;
+  width: 70%;
+  box-shadow: black;
+}
+.topbar {
+  height: fit-content;
+  background-color: rgb(4 116 251 / 31%);
+}
+.topbar img {
+  margin: 1em;
+  align-items: center;
+}
+
+.body-content {
+  display: grid;
+  grid-template-rows: 2fr 1fr 3fr;
+}
+.player {
+  text-align: center;
+  margin: 2em;
+}
+.song-details img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.title {
+  font-family: Rockwell;
+}
+.album-name {
+  font-family: Rockwell;
+}
+
+.song-info p {
+  font-size: 2em;
+}
+.artist-name {
+  font-family: The blacklight;
+}
+.controls {
+  padding: 2em;
+  background-color: rgb(255, 189, 127);
+  font-size: 0.5em;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.progress .controls {
+  width: 10%;
+}
+.control {
+  font-size: 4em;
+}
+.playlists {
+  margin-top: 2em;
+  background-image: url("./spiral-img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: fit-content;
+  width: fit-content;
+}
+#trackTime,
+#trackDuration {
+  font-size: medium;
+  margin: 2em;
+}
+.volume {
+  width: 50%;
+}
+.progress {
+  display: flex;
+  width: 100%;
+}
+.progress > input {
+  flex-grow: 1;
+}
+ul {
+  padding-inline-start: 0px;
+}
+li {
+  list-style-type: none;
+  font-family: "Rockwell";
+  color: white;
+
+  font-size: 2em;
+  margin: 0.1em;
+  padding: 0.3em 0.3em 0 2em;
+  border: 1px solid #000;
+  border-radius: 0.2em;
+
+  background-color: rgba(196, 78, 147, 0.555);
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+.playing {
+  background-color: rgba(158, 66, 146, 0.623);
+}

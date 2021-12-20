@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audio Player</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+      <div class="controls"></div>
     <button id="playprev" class="control">⏪</button>
     <button id="playOrPause" class="control">▶️</button>
     <button id="playnext" class="control">⏩</button>
@@ -33,7 +35,7 @@
       step="0.01"
       value="0.5"
     />
-
+    </div>
     <ul id="playlists"></ul>
     <script src="./js/script.js" type="module"></script>
   </body>
