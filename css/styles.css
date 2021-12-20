@@ -1,5 +1,5 @@
 .container {
-  background-color: rgb(223, 241, 235);
+  background-color: rgb(126 204 177 / 45%);
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 .topbar {
   height: fit-content;
-  background-color: rgb(4 116 251 / 31%);
+  background-color: rgb(126 204 177 / 98%);
 }
 .topbar img {
   display: block;
@@ -34,12 +34,15 @@ body {
   font-family: Rockwell;
 }
 .album-name {
-  font-family: Rockwell;
+  font-family: The blacklight;
 }
 
 .song-info p {
   font-size: 2em;
+  color: rgb(62 244 148);
+  text-shadow: 0 0 3px #000000, 0 0 5px #c89eab;
 }
+
 .artist-name {
   font-family: The blacklight;
 }
@@ -55,11 +58,12 @@ body {
   width: 10%;
 }
 .control {
-  font-size: 4em;
+  font-size: 6em;
+  margin: 0 0.2em;
 }
 .playlists {
   margin-top: 2em;
-  background-image: url("logo-sample1.png");
+
   background-repeat: no-repeat;
   background-position: center;
   height: fit-content;
@@ -95,9 +99,9 @@ li {
   border: 1px solid #000;
   border-radius: 0.2em;
 
-  background-color: rgba(196, 78, 147, 0.555);
-  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  background-color: rgb(147 215 179);
+  text-shadow: 0 0 3px #ea1208, 0 0 5px #1249e4;
 }
 .playing {
-  background-color: rgba(158, 66, 146, 0.623);
+  background-color: rgb(27 27 27 / 60%);
 }
