@@ -1,4 +1,4 @@
-import { $, $$ } from "./utils.js";
+import { $, $$, secsToMins } from "./utils.js";
 import { playlist } from "./data.js";
 
 // DOCUMENT ELEMENTS
@@ -22,6 +22,10 @@ const loadSongFromPlaylistByIndex = function (index = 0, start = false) {
   const keepPlaying = !song.paused;
   //SETUP THE FIRST SONG TO PLAY
   song.src = playlist[playlistIndex];
+
+  $$(`.playing`).forEach((li) => li.classList.remove(`playing`));
+  $(`[data-index="${playlistIndex}"]`).classList.add(`playing`);
+
   if (keepPlaying || start) {
     song.play().then(() => {
       //console.log("yeha kina aayena??");
@@ -82,7 +86,29 @@ window.addEventListener(`load`, function () {
       playOrPause.textContent = `⏸`;
     }
   });
-});
-trackVolume.addEventListener(`input`, function (event) {
-  setVolumeTo(trackVolume.value);
+
+  song.addEventListener(`durationchange`, function (event) {
+    trackDuration.textContent = secsToMins(song.duration);
+  });
+  song.addEventListener(`timeupdate`, function (event) {
+    trackTime.textContent = secsToMins(song.currentTime);
+    trackProgress.value = song.currentTime / song.duration;
+  });
+
+  let draggingProgress = false;
+  // DO NOT UPDATE WHILE DRAGGING
+  if (draggingProgress) retun;
+  trackProgress.addEventListener(`input`, function (event) {
+    draggingProgress = true;
+    song.currentTime = trackProgress.value * song.duration;
+  });
+  trackProgress.addEventListener(`change`, function (event) {
+    draggingProgress = false;
+    song.currentTime = trackProgress.value * song.duration;
+  });
+  song.addEventListener(`ended`, playNextSong);
+
+  trackVolume.addEventListener(`input`, function (event) {
+    setVolumeTo(trackVolume.value);
+  });
 });
