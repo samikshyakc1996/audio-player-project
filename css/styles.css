@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 10em auto;
+  margin: 0 auto;
   width: 70%;
   box-shadow: black;
 }
@@ -12,17 +12,18 @@ body {
   background-color: rgb(4 116 251 / 31%);
 }
 .topbar img {
-  margin: 1em;
-  align-items: center;
+  display: block;
+  height: 10rem;
+  width: 18rem;
+  margin: 2em auto;
+  padding: 2em;
 }
 
 .body-content {
   display: grid;
-  grid-template-rows: 2fr 1fr 3fr;
 }
 .player {
   text-align: center;
-  margin: 2em;
 }
 .song-details img {
   width: 20rem;
@@ -44,7 +45,7 @@ body {
 }
 .controls {
   padding: 2em;
-  background-color: rgb(255, 189, 127);
+  background-color: rgb(99 200 140 / 30%);
   font-size: 0.5em;
   margin-top: 1rem;
   text-align: center;
@@ -58,11 +59,12 @@ body {
 }
 .playlists {
   margin-top: 2em;
-  background-image: url("./spiral-img.png");
+  background-image: url("logo-sample1.png");
   background-repeat: no-repeat;
   background-position: center;
   height: fit-content;
   width: fit-content;
+  margin-bottom: 0;
 }
 #trackTime,
 #trackDuration {

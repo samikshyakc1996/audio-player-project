@@ -1,5 +1,5 @@
 import { $, $$, secsToMins } from "./utils.js";
-import { playlist } from "./data.js";
+import { playlist, trackInfo } from "./data.js";
 
 // DOCUMENT ELEMENTS
 const playOrPause = $(`#playOrPause`);
@@ -10,6 +10,10 @@ const trackDuration = $(`#trackDuration`);
 const trackTime = $(`#trackTime`);
 const trackProgress = $(`#trackProgress`);
 const trackVolume = $(`#trackVolume`);
+const title = $(".title");
+const albumName = $(".album-name");
+const artistName = $(".artist-name");
+const albumCover = $(".album-cover");
 
 //VARIABLES
 let playlistIndex = 0;
@@ -25,7 +29,11 @@ const loadSongFromPlaylistByIndex = function (index = 0, start = false) {
 
   $$(`.playing`).forEach((li) => li.classList.remove(`playing`));
   $(`[data-index="${playlistIndex}"]`).classList.add(`playing`);
-
+  let currentPlayingSong = $(".playing");
+  title.textContent = trackInfo[playlistIndex].title;
+  albumName.textContent = trackInfo[playlistIndex].albumName;
+  artistName.textContent = trackInfo[playlistIndex].artist;
+  albumCover.src = trackInfo[playlistIndex].albumCover;
   if (keepPlaying || start) {
     song.play().then(() => {
       //console.log("yeha kina aayena??");

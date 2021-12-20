@@ -8,35 +8,65 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-      <div class="controls"></div>
-    <button id="playprev" class="control">⏪</button>
-    <button id="playOrPause" class="control">▶️</button>
-    <button id="playnext" class="control">⏩</button>
-    <div class="progress controls">
-      <data id="trackTime">0:00</data>
-      <input
-        type="range"
-        name="progress"
-        id="trackProgress"
-        min="0"
-        max="1"
-        step="0.001"
-        value="0"
-      />
-      <data value="0" id="trackDuration">0:00</data>
+    <div class="container">
+      <div class="topbar">
+        <img
+          src="./graphics/musicmania.png"
+          alt="logo-sample"
+          width="100px"
+          height="auto"
+        />
+      </div>
+      <div class="body-content">
+        <div class="player">
+          <div class="song-details">
+            <img
+              src="./graphics/Adele-21.albumcover.jpeg"
+              alt="artist-cover"
+              class="album-cover"
+            />
+            <div class="song-info">
+              <p class="title">Lovesong</p>
+              <p class="album-name">21</p>
+              <p class="artist-name">ADELE</p>
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <button id="playprev" class="control">⏪</button>
+          <button id="playOrPause" class="control">▶️</button>
+          <button id="playnext" class="control">⏩</button>
+
+          <div class="progress controls">
+            <data id="trackTime">0:00</data>
+            <input
+              type="range"
+              name="progress"
+              id="trackProgress"
+              min="0"
+              max="1"
+              step="0.001"
+              value="0"
+            />
+            <data value="0" id="trackDuration">0:00</data>
+          </div>
+          <input
+            type="range"
+            name="volume"
+            id="trackVolume"
+            class="controls volume"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+          />
+        </div>
+        <div class="playlists">
+          <ul id="playlists"></ul>
+        </div>
+      </div>
     </div>
-    <input
-      type="range"
-      name="volume"
-      id="trackVolume"
-      class="controls volume"
-      min="0"
-      max="1"
-      step="0.01"
-      value="0.5"
-    />
-    </div>
-    <ul id="playlists"></ul>
-    <script src="./js/script.js" type="module"></script>
+
+    <script src="./js/script.js" type="module" defer></script>
   </body>
 </html>
